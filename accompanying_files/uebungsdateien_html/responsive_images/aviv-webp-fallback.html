@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Fallback für AVIF- und WebP-Bilder</title>
+        
+        <!-- ein wenig CSS-Styling: -->
+        <style>
+            img {
+                display: block; /* als Block-Element darstellen */
+                width: 100%; /* an Fenstergröße anpassen */
+                max-width: 640px; /* aber nicht breiter als 640px */
+                margin: 0 auto; /* auf der Seite zentrieren */
+            }
+        </style>
+    </head>
+    <body>
+        
+        <picture>
+            <source srcset="images/koi-animation.avifs" type="image/avif" />
+            <source srcset="images/koi-animation.webp" type="image/webp" />
+            <source srcset="images/koi.jpg" type="image/jpeg" />
+            <img src="images/koi.jpg" alt="Koi" />
+            <!-- ältere Browser zeigen das JPG-Standbild an -->
+        </picture>
+        
+    </body>
+</html>

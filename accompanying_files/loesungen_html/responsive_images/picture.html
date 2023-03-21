@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <title>picture</title>
+        <style>
+            img {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <picture>
+            <source media="(min-width: 1700px)" srcset="images/banner-large.jpg 1x, images/banner-xl.jpg 2x"/>
+            <source media="(min-width: 900px)" srcset="images/banner-medium.jpg 1x, images/banner-large.jpg 2x"/>
+            <source media="(min-width: 500px)" srcset="images/banner-small.jpg 1x, images/banner-medium.jpg 2x"/>
+            <img src="images/banner-vertical.jpg" srcset="images/banner-vertical.jpg 1x, images/banner-vertical-large.jpg 2x" alt="Banner"/>
+        </picture>
+        
+    </body>
+</html>

@@ -1,0 +1,131 @@
+/* alle Standardabstände entfernen: */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* allg. Formatierung des Dokuments: */
+body {
+    color: #343a40; /* Textfarbe */
+    font-family: sans-serif;
+    line-height: 1.5;
+    margin: 1rem; /* Seitenränder */
+    background-color: #fff;
+}
+
+/* Überschriften: */
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Links: */
+a {
+    color: #007bff;
+}
+
+small {
+    font-size: .85em;
+}
+
+.text-warning {
+    color: #dc3545;
+}
+
+.gallery {
+    margin-bottom: 2rem;
+}
+
+/* figures auf größeren Bildschirmen als Raster anzeigen: */
+@media (min-width: 1000px) {
+    .gallery {
+        display: flex;
+        justify-content: space-between;
+        max-width: 100%;
+    }
+}
+
+.gallery figure {
+    padding: 1rem;
+}
+
+/* max. Größe einer figure auf größeren Bildschirmen: */
+@media (min-width: 1000px) {
+    .gallery figure {
+        width: 25%;
+        padding: 0 1rem;
+        flex: 0 1 auto;
+    }
+}
+
+/* Bilder immer so groß wie die umgebende figure: */
+.gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Bildunterschriften: */
+.gallery figcaption {
+    text-align: center;
+    margin-top: .3rem;
+}
+
+.gallery a {
+    text-decoration: none;
+    display: block;
+}
+
+.gallery a.close {
+    display: none;
+}
+
+/* Lightbox: */
+
+.gallery figure:target {
+    width: auto; /* Größenbeschränkung zurücksetzen */
+    padding: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.gallery figure:target img {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+}
+
+.gallery figure:target figcaption {
+    color: #fff;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: .5rem;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.gallery figure:target ~ a.close {
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    display: block; /* sichtbar machen */
+}

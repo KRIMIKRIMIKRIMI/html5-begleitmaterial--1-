@@ -1,0 +1,79 @@
+/* alle Standardabstände entfernen: */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* allg. Formatierung des Dokuments: */
+body {
+    font-size: 1em;
+    font-family: sans-serif;
+    line-height: 1.5;
+    background-color: #fff;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+a {
+    color: #be4d8b;
+}
+
+figure, figcaption {
+    display: block;
+}
+
+/* Abbildungen als Raster anzeigen: */
+.gallery {
+    display: flex;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.gallery > * {
+    margin: .5rem;
+    padding: .5rem;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    /* max. Größe einer Box: */
+    flex: 1 1 20%;
+}
+
+/* aktuell angezeigte Abbildung: */
+.gallery > figure {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-color: #be4d8b;
+}
+
+/* Galerie-Links als Blockelemente und normalen Text anzeigen: */
+.gallery a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+/* Bilder immer so breit wie die umgebende figure: */
+.gallery img {
+    display: block;
+    width: 100%;
+    min-width: 8rem;
+}
+
+/* Bildunterschriften: */
+.gallery figcaption {
+    line-height: 1.3;
+    margin-top: .3rem;
+}
+
+.gallery + p,
+.gallery figcaption {
+    /* responsive Schriftgröße:
+    minimale Größe: 1rem
+    bevorzugte Größe: 1.5vw (= 1.5% der Breite des Browserfensters)
+    maximale Größe: 1.5rem */
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    text-align: center;
+}
